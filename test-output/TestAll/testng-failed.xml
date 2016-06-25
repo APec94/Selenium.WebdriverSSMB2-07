@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [TestAll]" parallel="tests">
+  <parameter name="browser" value="ch"/>
+  <test name="ie">
+    <parameter name="browser" value="ie"/>
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.paxotech.heatclinic.scripts.LoginFunctionality"/>
+    </classes>
+  </test> <!-- ie -->
+  <test name="ch">
+    <parameter name="browser" value="ch"/>
+    <classes>
+      <class name="com.paxotech.heatclinic.scripts.LoginFunctionality"/>
+    </classes>
+  </test> <!-- ch -->
+  <test name="ch(failed)" parallel="tests">
+    <parameter name="browser" value="ch"/>
+    <classes>
+      <class name="com.paxotech.heatclinic.scripts.LoginFunctionality">
+        <methods>
+          <include name="createNewUser"/>
+          <include name="createNewUser2"/>
+          <include name="beforeMethod"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="afterMethod"/>
+          <include name="validLogin"/>
+        </methods>
+      </class> <!-- com.paxotech.heatclinic.scripts.LoginFunctionality -->
+    </classes>
+  </test> <!-- ch(failed) -->
+</suite> <!-- Failed suite [TestAll] -->

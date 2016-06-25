@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestAll" verbose="1" parallel="tests" thread-count="2">
+
+	<test name="ie">
+		<parameter name="browser" value="ie"/>
+		<groups>
+			<run>
+				<include name="smoke"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.paxotech.heatclinic.scripts.LoginFunctionality" />
+		</classes>
+	</test>
+
+	<test name="ch">  
+	<parameter name="browser" value="ch"/>
+		<classes>
+			<class name="com.paxotech.heatclinic.scripts.LoginFunctionality" />
+		</classes>
+	</test>
+
+</suite>
